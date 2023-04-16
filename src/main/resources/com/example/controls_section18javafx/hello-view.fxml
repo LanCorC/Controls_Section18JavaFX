@@ -8,6 +8,12 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.HBox?>
 <GridPane alignment="CENTER" xmlns:fx="http://javafx.com/fxml"
           fx:controller="com.example.controls_section18javafx.HelloController"
           vgap="10" hgap="10">
@@ -19,7 +25,13 @@
         </graphic>
     </Button>
 
-    <Label GridPane.rowIndex="0" GridPane.columnIndex="1" text="This is a label">
+    <Label GridPane.rowIndex="0" GridPane.columnIndex="1"
+           text="This is a label This is a label This is a label This is a label"
+    textFill="blue" wrapText="true">
+        <font>
+            <Font name="Arial italic" size="12"/>
+        </font>
+
         <graphic>
             <ImageView>
                 <Image url="@/toolbarButtonGraphics/general/Information24.gif"/>
@@ -27,4 +39,22 @@
         </graphic>
     </Label>
 
+    <fx:define>
+        <ToggleGroup fx:id="colorToggleGroup"/>
+    </fx:define>
+    <RadioButton toggleGroup="$colorToggleGroup" GridPane.columnIndex="2" GridPane.rowIndex="0" text="Red"/>
+    <RadioButton toggleGroup="$colorToggleGroup" GridPane.columnIndex="3" GridPane.rowIndex="0" text="Blue" selected="true"/>
+    <RadioButton toggleGroup="$colorToggleGroup" GridPane.columnIndex="4" GridPane.rowIndex="0" text="Green"/>
+
+    <VBox GridPane.columnIndex="5" GridPane.rowIndex="0">
+        <CheckBox text="Dog"/>
+        <CheckBox text="Cat"/>
+        <CheckBox text="Bird"/>
+    </VBox>
+
+    <HBox GridPane.rowIndex="0" GridPane.columnIndex="6">
+        <ToggleButton text="Toggle Me"/>
+        <ToggleButton text="Hello"/>
+        <ToggleButton text="Good-Bye"/>
+    </HBox>
 </GridPane>
